@@ -65,10 +65,7 @@ open class ToolBoard: UIView {
         for _ in 0..<self.itemNumber{
             colorTab.append(self.defaultColor)
             radiusTab.append(self.defaultRadius)
-            
         }
-        
-        
         
         loadXib()
     }
@@ -82,8 +79,6 @@ open class ToolBoard: UIView {
             radiusTab.append(self.defaultRadius)
             
         }
-        
-        
         
         loadXib()
     }
@@ -101,8 +96,6 @@ open class ToolBoard: UIView {
             radiusTab.append(self.defaultRadius)
             
         }
-        
-        
         
         loadXib()
     }
@@ -344,7 +337,6 @@ extension ToolBoard: UICollectionViewDelegate, UICollectionViewDataSource{
         delegate?.toolBoard(self, cellForItem: cell, indexPath: indexPath)
         
         if !self.isPersonalizedCell{
-            
             cell.backgroundColor = self.colorTab[indexPath.row]
             cell.layer.cornerRadius = self.radiusTab[indexPath.row]
         }
@@ -356,7 +348,6 @@ extension ToolBoard: UICollectionViewDelegate, UICollectionViewDataSource{
         
         
     }
-    
     
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

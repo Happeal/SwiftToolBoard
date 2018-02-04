@@ -1,4 +1,4 @@
-# SwiftToolBoard
+<h1 align="center"> SwiftToolBoard </h1>
 <p align="center">
 <img src="https://travis-ci.org/Happeal/SwiftToolBoard.svg?branch=master" />
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg" />

@@ -145,7 +145,7 @@ open class ToolBoard: UIView {
             self.initView?.toolBoardCollectionView.collectionViewLayout = layout
         }
     }
-    
+    //cancel personalized cell
     public func returnToDefaultItems(){
         self.isPersonalizedCell = false
         self.cellNibName = "toolBoardCell"

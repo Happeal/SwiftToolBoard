@@ -128,7 +128,7 @@ open class ToolBoard: UIView {
         self.initView = view
         return view
     }
-    
+    //Refresh Methode
     private func refresh(){
         if let layout = self.initView?.toolBoardCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             

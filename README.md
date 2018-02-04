@@ -1,8 +1,8 @@
 # SwiftToolBoard
 <p align="center">
 <img src="https://travis-ci.org/Happeal/SwiftToolBoard.svg?branch=master" />
-<img src="https://camo.githubusercontent.com/4f118b3bbdae3a6c576b02083da10f466a7d46d9/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d694f532d626c75652e7376673f7374796c653d666c6174" />
-<img src="https://camo.githubusercontent.com/cb33860ecbff2d06fc28410366b562b25e7adc1d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c616e67756167652d73776966742d6f72616e67652e737667" />
+<img src="https://img.shields.io/badge/platform-iOS-blue.svg" />
+<img src="https://img.shields.io/badge/language-Swift-orange.svg" />
 <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" />
 </p>
 

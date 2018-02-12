@@ -56,7 +56,7 @@ open class ToolBoard: UIView {
     
     private var isPersonalizedCell : Bool = false
 
-    private var bundle : Bundle = Bundle(for: type(of: self) as! AnyClass)
+    private var bundle : Bundle = Bundle()
     
     @IBOutlet weak var toolBoardCollectionView: UICollectionView!
     

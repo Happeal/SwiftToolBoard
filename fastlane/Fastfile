@@ -18,5 +18,7 @@ platform :ios do
   desc "Run all the tests"
   lane :test do
     scan(device: "Iphone 6s (9.2)")
+    cocoapods(clean: true, podfile: "../SwiftToolBoard")
+
   end
 end

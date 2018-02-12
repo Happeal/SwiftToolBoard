@@ -152,8 +152,10 @@ open class ToolBoard: UIView {
     //cancel personalized cell
     public func returnToDefaultItems(){
         self.isPersonalizedCell = false
+        self.bundle = Bundle(for: type(of: self))
         self.cellNibName = "toolBoardCell"
         self.reuseCellIdentifier = "simpleCell"
+        
         self.refresh()
         self.initView?.toolBoardCollectionView.reloadData()
     }

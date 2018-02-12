@@ -55,6 +55,8 @@ open class ToolBoard: UIView {
     
     
     private var isPersonalizedCell : Bool = false
+
+    private var bundle : Bundle = Bundle(for: type(of: self) as! AnyClass)
     
     @IBOutlet weak var toolBoardCollectionView: UICollectionView!
     
@@ -67,6 +69,7 @@ open class ToolBoard: UIView {
             radiusTab.append(self.defaultRadius)
         }
         
+        self.bundle = Bundle(for: type(of: self))
         loadXib()
     }
     
@@ -80,10 +83,11 @@ open class ToolBoard: UIView {
             
         }
         
+        self.bundle = Bundle(for: type(of: self))
         loadXib()
     }
     
-    public init(itemNumber : Int, cellNibName : String, reuseCellIdentifier : String){
+    public init(itemNumber : Int, cellNibName : String, reuseCellIdentifier : String, bundle : Bundle){
         super.init( frame: CGRect(x: 0, y:0, width:UIScreen.main.bounds.width, height: self.collectionHeight))
         self.isPersonalizedCell = true
         self.itemNumber = itemNumber
@@ -96,7 +100,7 @@ open class ToolBoard: UIView {
             radiusTab.append(self.defaultRadius)
             
         }
-        
+        self.bundle = bundle
         loadXib()
     }
     
@@ -121,8 +125,8 @@ open class ToolBoard: UIView {
     
     
     fileprivate func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "ToolBoard", bundle: bundle)
+        let thisBundle = Bundle(for: type(of: self))
+        let nib = UINib(nibName: "ToolBoard", bundle: thisBundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! ToolBoard
         
         self.initView = view
@@ -199,8 +203,8 @@ open class ToolBoard: UIView {
         if diff < 0{
             diff = diff * -1
             for _ in 0..<diff{
-                colorTab.popLast()
-                radiusTab.popLast()
+                _ = colorTab.popLast()
+                _ = radiusTab.popLast()
                 
             }
         } else if diff > 0 {
@@ -302,8 +306,7 @@ open class ToolBoard: UIView {
             
         case .bottom:
             return self.cellSpacingBottom
-        default:
-            return 0.0
+
         }
         
         
@@ -328,9 +331,9 @@ extension ToolBoard: UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let bundle = Bundle(for: type(of: self))
+     
         
-        collectionView.register(UINib.init(nibName: cellNibName, bundle: bundle), forCellWithReuseIdentifier: reuseCellIdentifier)
+        collectionView.register(UINib.init(nibName: cellNibName, bundle: self.bundle), forCellWithReuseIdentifier: reuseCellIdentifier)
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCellIdentifier, for: indexPath)
         

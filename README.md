@@ -6,8 +6,9 @@
 <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" />
 </p>
 
-
 Swift framework to add a toolbar above the keyboard
+## Preview
+![Preview](http://www.metautbenjamin.com/img/toolboard1.png)
 
 <h2> How to install </h2>
 
